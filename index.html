@@ -1,114 +1,150 @@
-a, h1, h2, p {
-  margin: 0;
-  padding: 0;
-}
-body {
-  line-height: 1.6;
-  color: #333;
-  background: #f9f9f9;
-  margin: 0;
-}
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-header {
-  background: #004d99;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-nav {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-nav a {
-  color: white;
-  font-weight: 600;
-  padding: 0.5rem 0;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease;
-}
-nav a.active, nav a:hover {
-  border-color: #ffcc00;
-}
-main {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-}
-section {
-  display: none;
-  padding-bottom: 2rem;
-}
-section.active {
-  display: block;
-}
-h2 {
-  margin-bottom: 1rem;
-  color: #004d99;
-  border-bottom: 3px solid #ffcc00;
-  padding-bottom: 0.3rem;
-}
-p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-.image-container {
-  margin: 1rem 0 2rem;
-  text-align: center;
-}
-.image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
-}
-@media (max-width: 600px) {
-  nav {
-    justify-content: center;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Egedo - Tourism & Gastronomy</title>
+  <style>
+    /* Logo ve header düzeni */
+    header {
+      background: #004d99;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header a.logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+    }
+    header svg {
+      max-height: 60px;
+      width: auto;
+    }
+    header svg text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      fill: #ffcc00;
+    }
+
+    /* Reset & temel stiller */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    nav a.active, nav a:hover {
+      border-color: #ffcc00;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    section {
+      display: none;
+      padding-bottom: 2rem;
+    }
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #004d99;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .image-container {
+      margin: 1rem 0 2rem;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <a href="#about" class="logo-link">
-    <svg width="180" height="50" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Egedo Logo">
-      <path fill="#004d99" d="M10 40 L50 20 L50 35 L90 30 L90 50 L50 45 L50 60 Z" />
-      <rect x="110" y="15" width="10" height="50" fill="#ffcc00" rx="2" />
-      <rect x="125" y="15" width="10" height="50" fill="#ffcc00" rx="2" />
-      <rect x="140" y="15" width="10" height="50" fill="#ffcc00" rx="2" />
-      <path fill="#004d99" d="M170 15 L180 15 L190 65 L180 65 Z" />
-      <text x="210" y="55" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="700" font-size="48" fill="#004d99">
+  <a href="#about" class="logo-link" aria-label="Egedo Logo">
+    <svg width="240" height="60" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+      <title>Egedo Logo</title>
+      <desc>Logo with airplane, fork, knife and Egedo text</desc>
+      <!-- Uçak simgesi -->
+      <path fill="#ffcc00" d="M15 40 L65 20 L65 35 L110 30 L110 50 L65 45 L65 60 Z" />
+      <!-- Çatal simgesi -->
+      <rect x="130" y="15" width="10" height="50" fill="#004d99" rx="2" />
+      <rect x="150" y="15" width="10" height="50" fill="#004d99" rx="2" />
+      <rect x="170" y="15" width="10" height="50" fill="#004d99" rx="2" />
+      <!-- Bıçak simgesi -->
+      <path fill="#ffcc00" d="M200 15 L215 15 L225 65 L215 65 Z" />
+      <!-- Egedo Yazısı -->
+      <text x="240" y="55" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="700" font-size="48" fill="#ffcc00">
         Egedo
       </text>
     </svg>
@@ -124,7 +160,7 @@ footer {
 <main>
   <section id="about" class="active">
     <h2>About Us</h2>
-    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors, our company is proudly based in Portugal while serving a global clientele.</p>
+    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors, our company is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
     <div class="image-container">
       <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Company building" />
     </div>
@@ -133,20 +169,20 @@ footer {
 
   <section id="tourism">
     <h2>Tourism</h2>
-    <p>We offer flight and hotel bookings with competitive prices, 24/7 support, and a seamless customer experience. Whether you're traveling across the globe or locally, Egedo has your travel covered.</p>
+    <p>In the tourism sector, Egedo specializes in hotel and flight ticket sales, offering competitive prices, seamless customer support, and premium quality service. We provide access to flights from anywhere to anywhere worldwide, as well as hotel bookings in all major destinations globally.</p>
     <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Tourism travel" />
+      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=900&q=80" alt="Beach with airplane flying overhead" />
     </div>
-    <p>From major cities to remote destinations, we ensure smooth travel experiences for individuals, families, and businesses alike.</p>
+    <p>Our commitment is to deliver hassle-free travel experiences with personalized assistance, ensuring our clients enjoy every journey with confidence and comfort.</p>
   </section>
 
   <section id="gastronomy">
     <h2>Gastronomy</h2>
-    <p>Soon opening in Lisbon: Egedo’s Turkish restaurant offering authentic cuisine. Bringing centuries of flavor and culture to Portugal’s heart.</p>
+    <p>Our gastronomy division is set to open soon in Lisbon, offering authentic Turkish cuisine delights. We aim to bring the rich flavors of Turkey to the heart of Portugal, providing a unique and memorable dining experience.</p>
     <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=80" alt="Turkish cuisine" />
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80" alt="Traditional Turkish meal" />
     </div>
-    <p>With carefully selected ingredients and traditional recipes, we invite you to a journey through Turkish tastes, served with elegance.</p>
+    <p>We look forward to welcoming food enthusiasts to savor traditional recipes made with the finest ingredients and passionate craftsmanship.</p>
   </section>
 
   <section id="contact">
@@ -161,6 +197,7 @@ footer {
 </footer>
 
 <script>
+  // Menü linklerine tıklandığında sekme değişimi
   const links = document.querySelectorAll('nav a');
   const sections = document.querySelectorAll('main section');
 
@@ -169,6 +206,7 @@ footer {
       e.preventDefault();
       const target = link.getAttribute('href').substring(1);
 
+      // Aktif linki ve sekmeyi değiştir
       links.forEach(l => l.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
 
