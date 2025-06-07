@@ -4,10 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Egedo - Tourism & Gastronomy</title>
+  <style>
+    /* Reset & temel stiller */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: #004d99;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    nav a.active, nav a:hover {
+      border-color: #ffcc00;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    section {
+      display: none;
+      padding-bottom: 2rem;
+    }
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #004d99;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .image-container {
+      margin: 1rem 0 2rem;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Egedo</h1>
-  <p>Egedo is a tourism and gastronomy holding company founded by two Turkish entrepreneurs, based in Portugal and serving globally. We’re launching very soon!</p>
-  <p>Contact us: <a href="mailto:info@egedo.net">info@egedo.net</a></p>
+
+<header>
+  <h1>Egedo</h1>
+  <nav>
+    <a href="#about" class="active">About Us</a>
+    <a href="#tourism">Tourism</a>
+    <a href="#gastronomy">Gastronomy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section id="about" class="active">
+    <h2>About Us</h2>
+    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors, our company is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
+    <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Company building" />
+    </div>
+    <p>Our mission is to blend cultural richness with outstanding quality, providing innovative solutions and unparalleled customer support in every endeavor we undertake.</p>
+  </section>
+
+  <section id="tourism">
+    <h2>Tourism</h2>
+    <p>In the tourism sector, Egedo specializes in hotel and flight ticket sales, offering competitive prices, seamless customer support, and premium quality service. We provide access to flights from anywhere to anywhere worldwide, as well as hotel bookings in all major destinations globally.</p>
+    <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Tourism travel" />
+    </div>
+    <p>Our commitment is to deliver hassle-free travel experiences with personalized assistance, ensuring our clients enjoy every journey with confidence and comfort.</p>
+  </section>
+
+  <section id="gastronomy">
+    <h2>Gastronomy</h2>
+    <p>Our gastronomy division is set to open soon in Lisbon, offering authentic Turkish cuisine delights. We aim to bring the rich flavors of Turkey to the heart of Portugal, providing a unique and memorable dining experience.</p>
+    <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=900&q=80" alt="Turkish cuisine" />
+    </div>
+    <p>We look forward to welcoming food enthusiasts to savor traditional recipes made with the finest ingredients and passionate craftsmanship.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>For inquiries and further information, please reach out to us at: <a href="mailto:info@egedo.net">info@egedo.net</a></p>
+    <p>We are eager to connect and collaborate with partners and clients across the globe.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Egedo Holding. All rights reserved.
+</footer>
+
+<script>
+  // Menü linklerine tıklandığında sekme değişimi
+  const links = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('main section');
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('href').substring(1);
+
+      // Aktif linki ve sekmeyi değiştir
+      links.forEach(l => l.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      link.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
