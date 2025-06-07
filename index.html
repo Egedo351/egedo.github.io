@@ -7,36 +7,37 @@
   <style>
     /* Header ve logo */
     header {
-      background: #FF6F3C; /* Günbatımı turuncusu */
+      background: #E65B24; /* Daha koyu turuncu */
       color: white;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* Logo ortada */
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+      min-height: 80px;
     }
     header a.logo-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       text-decoration: none;
       color: white;
+      user-select: none;
     }
     header svg {
-      height: 60px;
+      height: 100px;
       width: auto;
       shape-rendering: geometricPrecision;
+      display: block;
+      margin: 0 auto;
     }
     header svg text {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 700;
-      font-size: 48px;
+      font-weight: 800;
+      font-size: 70px;
       fill: white;
-      user-select: none;
+      letter-spacing: 3px;
     }
 
     /* Reset & temel stiller */
@@ -49,43 +50,30 @@
       line-height: 1.6;
       color: #333;
       background: #f9f9f9;
-    }
-    a {
-      color: #004d99;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    nav {
+      min-height: 100vh;
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 120px; /* Header yüksekliği kadar boşluk */
     }
-    nav a {
-      color: white;
-      font-weight: 600;
-      padding: 0.5rem 0;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-    nav a.active, nav a:hover {
-      border-color: #ffe1b3;
-    }
-
     main {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      width: 100%;
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      display: none; /* İlk açılışta gizli */
+      flex-direction: column;
+      gap: 2rem;
     }
-
+    main.active {
+      display: flex;
+    }
     section {
       display: none;
-      padding-bottom: 2rem;
     }
     section.active {
       display: block;
@@ -93,8 +81,8 @@
 
     h2 {
       margin-bottom: 1rem;
-      color: #FF6F3C;
-      border-bottom: 3px solid #FF6F3C;
+      color: #E65B24;
+      border-bottom: 3px solid #E65B24;
       padding-bottom: 0.3rem;
     }
 
@@ -116,23 +104,34 @@
       display: inline-block;
     }
 
+    /* Contact mail icon */
+    .mail-icon {
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      fill: #E65B24;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #666;
       border-top: 1px solid #ddd;
-      margin-top: 2rem;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 40px;
     }
 
     /* Responsive */
     @media (max-width: 600px) {
-      nav {
-        justify-content: center;
-      }
       .image-container img {
         max-width: 90%;
         max-height: 180px;
+      }
+      body {
+        padding-top: 100px;
       }
     }
   </style>
@@ -140,33 +139,16 @@
 <body>
 
 <header>
-  <a href="#about" class="logo-link" aria-label="Egedo Logo">
-    <svg width="280" height="70" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <a href="#logo" class="logo-link" aria-label="Egedo Logo">
+    <svg width="320" height="100" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
       <title>Egedo Logo</title>
-      <desc>Logo with airplane, fork, knife and Egedo text</desc>
-      <!-- Uçak simgesi - sarı -->
-      <path fill="#fff3d6" d="M15 40 L65 20 L65 35 L110 30 L110 50 L65 45 L65 60 Z" />
-      <!-- Çatal simgesi - beyaz -->
-      <rect x="130" y="15" width="10" height="50" fill="#ffffff" rx="2" />
-      <rect x="150" y="15" width="10" height="50" fill="#ffffff" rx="2" />
-      <rect x="170" y="15" width="10" height="50" fill="#ffffff" rx="2" />
-      <!-- Bıçak simgesi - sarı -->
-      <path fill="#fff3d6" d="M200 15 L215 15 L225 65 L215 65 Z" />
-      <!-- Egedo Yazısı -->
-      <text x="240" y="55" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="700" font-size="48" fill="white" >
-        Egedo
-      </text>
+      <desc>Simple logo text</desc>
+      <text x="10" y="65">Egedo</text>
     </svg>
   </a>
-  <nav>
-    <a href="#about" class="active">About Us</a>
-    <a href="#tourism">Tourism</a>
-    <a href="#gastronomy">Gastronomy</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
-<main>
+<main id="mainContent">
   <section id="about" class="active">
     <h2>About Us</h2>
     <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors, our company is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
@@ -189,14 +171,21 @@
     <h2>Gastronomy</h2>
     <p>Our gastronomy division is set to open soon in Lisbon, offering authentic Turkish cuisine delights. We aim to bring the rich flavors of Turkey to the heart of Portugal, providing a unique and memorable dining experience.</p>
     <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1601924638867-3b96b1c1d5cd?auto=format&fit=crop&w=900&q=80" alt="Traditional Turkish meal with kebab and mezeler" />
+      <img src="https://images.unsplash.com/photo-1575412243241-fafebd6a0b52?auto=format&fit=crop&w=900&q=80" alt="Traditional Turkish meal with kebap, mantı and ayran" />
     </div>
     <p>We look forward to welcoming food enthusiasts to savor traditional recipes made with the finest ingredients and passionate craftsmanship.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>For inquiries and further information, please reach out to us at: <a href="mailto:info@egedo.net">info@egedo.net</a></p>
+    <p>
+      <svg class="mail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z" stroke="#E65B24" stroke-width="2" fill="none"/>
+        <path d="M22 4L12 13 2 4" stroke="#E65B24" stroke-width="2" fill="none"/>
+      </svg>
+      For inquiries and further information, please reach out to us at: 
+      <a href="mailto:info@egedo.net">info@egedo.net</a>
+    </p>
     <p>We are eager to connect and collaborate with partners and clients across the globe.</p>
   </section>
 </main>
@@ -206,23 +195,10 @@
 </footer>
 
 <script>
-  // Menü linklerine tıklandığında sekme değişimi
-  const links = document.querySelectorAll('nav a');
-  const sections = document.querySelectorAll('main section');
+  // Sayfa açılışında sadece logo görünsün, main gizli
+  // Eğer ileride menü yapılırsa buraya JS ekleyebiliriz
 
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = link.getAttribute('href').substring(1);
-
-      // Aktif linki ve sekmeyi değiştir
-      links.forEach(l => l.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-
-      link.classList.add('active');
-      document.getElementById(target).classList.add('active');
-    });
-  });
+  // Örnek: logo tıklayınca main görünür olabilir, istersen ekleyelim
 </script>
 
 </body>
