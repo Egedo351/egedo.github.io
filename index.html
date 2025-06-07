@@ -26,7 +26,7 @@
       color: white;
     }
     header svg {
-      max-height: 60px;
+      max-height: 80px; /* büyüttüm */
       width: auto;
     }
     header svg text {
@@ -105,7 +105,7 @@
       text-align: center;
     }
     .image-container img {
-      max-width: 100%;
+      max-width: 70%; /* küçültüldü */
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
@@ -120,10 +120,22 @@
       margin-top: 2rem;
     }
 
+    /* Mail icon styles */
+    .mail-icon {
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      fill: #0077cc;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       nav {
         justify-content: center;
+      }
+      .image-container img {
+        max-width: 100%;
       }
     }
   </style>
@@ -132,19 +144,19 @@
 
 <header>
   <a href="#about" class="logo-link" aria-label="Egedo Logo">
-    <svg width="240" height="60" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+    <svg width="280" height="80" viewBox="0 0 350 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
       <title>Egedo Logo</title>
       <desc>Logo with airplane, fork, knife and Egedo text</desc>
       <!-- Uçak simgesi -->
-      <path fill="#ffcc00" d="M15 40 L65 20 L65 35 L110 30 L110 50 L65 45 L65 60 Z" />
+      <path fill="#ffcc00" d="M20 50 L80 25 L80 45 L135 40 L135 65 L80 60 L80 75 Z" />
       <!-- Çatal simgesi -->
-      <rect x="130" y="15" width="10" height="50" fill="#004d99" rx="2" />
-      <rect x="150" y="15" width="10" height="50" fill="#004d99" rx="2" />
-      <rect x="170" y="15" width="10" height="50" fill="#004d99" rx="2" />
+      <rect x="150" y="20" width="12" height="60" fill="#004d99" rx="3" />
+      <rect x="172" y="20" width="12" height="60" fill="#004d99" rx="3" />
+      <rect x="194" y="20" width="12" height="60" fill="#004d99" rx="3" />
       <!-- Bıçak simgesi -->
-      <path fill="#ffcc00" d="M200 15 L215 15 L225 65 L215 65 Z" />
+      <path fill="#ffcc00" d="M230 20 L250 20 L265 80 L250 80 Z" />
       <!-- Egedo Yazısı -->
-      <text x="240" y="55" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="700" font-size="48" fill="#ffcc00">
+      <text x="280" y="70" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-weight="700" font-size="54" fill="#ffcc00">
         Egedo
       </text>
     </svg>
@@ -160,7 +172,7 @@
 <main>
   <section id="about" class="active">
     <h2>About Us</h2>
-    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors, our company is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
+    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors. Our company is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
     <div class="image-container">
       <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Company building" />
     </div>
@@ -180,14 +192,17 @@
     <h2>Gastronomy</h2>
     <p>Our gastronomy division is set to open soon in Lisbon, offering authentic Turkish cuisine delights. We aim to bring the rich flavors of Turkey to the heart of Portugal, providing a unique and memorable dining experience.</p>
     <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80" alt="Traditional Turkish meal" />
+      <img src="https://images.unsplash.com/photo-1590080877777-40bcf167ca47?auto=format&fit=crop&w=900&q=80" alt="Turkish mezes, kebap and mantı" />
     </div>
     <p>We look forward to welcoming food enthusiasts to savor traditional recipes made with the finest ingredients and passionate craftsmanship.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>For inquiries and further information, please reach out to us at: <a href="mailto:info@egedo.net">info@egedo.net</a></p>
+    <p>
+      <svg class="mail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1.5 4.5h21v15h-21v-15zm19.5 1.5l-9 7.5-9-7.5v12h18v-12zm-9 5.25l9-7.5v-1.5l-9 7.5-9-7.5v1.5l9 7.5z"/></svg>
+      For inquiries and further information, please reach out to us at: <a href="mailto:info@egedo.net">info@egedo.net</a>
+    </p>
     <p>We are eager to connect and collaborate with partners and clients across the globe.</p>
   </section>
 </main>
