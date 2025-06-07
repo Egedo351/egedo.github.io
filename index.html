@@ -18,31 +18,24 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .logo-link {
-      font-family: Arial, Helvetica, sans-serif;
+    header a.logo-link {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #ffcc00;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+header svg {
+  max-height: 80px;      /* Daha büyük yükseklik */
+  width: auto;
+}
+    header svg text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-weight: 700;
-      font-size: 2.5rem;
-      color: #FF8C00; /* turuncu ton */
-      text-decoration: none;
-      letter-spacing: 4px;
-      user-select: none;
-    }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      font-weight: 600;
-      padding: 0.5rem 0;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-      text-decoration: none;
-    }
-    nav a.active, nav a:hover {
-      border-color: #ffcc00;
+      font-size: 48px;
+      fill: #ffcc00;
     }
 
     /* Reset & temel stiller */
@@ -62,6 +55,22 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 0;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    nav a.active, nav a:hover {
+      border-color: #ffcc00;
     }
 
     main {
@@ -98,11 +107,14 @@
       text-align: center;
     }
     .image-container img {
-      max-width: 80%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
-    }
+  max-width: 50%;
+  max-height: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  display: block;
+  margin: 1rem auto;
+}
 
     footer {
       text-align: center;
@@ -124,7 +136,15 @@
 <body>
 
 <header>
-  <a href="#about" class="logo-link" aria-label="Egedo Logo">EGEDO</a>
+  .logo-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #FF8C00; /* turuncu ton */
+  text-decoration: none;
+  letter-spacing: 2px;
+  user-select: none;
+}
   <nav>
     <a href="#about" class="active">About Us</a>
     <a href="#tourism">Tourism</a>
@@ -133,10 +153,10 @@
   </nav>
 </header>
 
-  <main>
+<main>
   <section id="about" class="active">
     <h2>About Us</h2>
-    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors. Our company is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
+    <p>Egedo is a holding company operating in the tourism and gastronomy sectors. Founded by two visionary Turkish entrepreneurs and investors. Egedo is proudly based in Portugal while serving a global clientele. We are excited to announce that our operations will commence shortly, bringing exceptional services to customers worldwide.</p>
     <div class="image-container">
       <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Company building" />
     </div>
@@ -147,8 +167,8 @@
     <h2>Tourism</h2>
     <p>In the tourism sector, Egedo specializes in hotel and flight ticket sales, offering competitive prices, seamless customer support, and premium quality service. We provide access to flights from anywhere to anywhere worldwide, as well as hotel bookings in all major destinations globally.</p>
     <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=900&q=80" alt="Beach with airplane flying overhead" />
-    </div>
+  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Ocean beach with airplane flying overhead" />
+</div>
     <p>Our commitment is to deliver hassle-free travel experiences with personalized assistance, ensuring our clients enjoy every journey with confidence and comfort.</p>
   </section>
 
@@ -156,8 +176,8 @@
     <h2>Gastronomy</h2>
     <p>Our gastronomy division is set to open soon in Lisbon, offering authentic Turkish cuisine delights. We aim to bring the rich flavors of Turkey to the heart of Portugal, providing a unique and memorable dining experience.</p>
     <div class="image-container">
-      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80" alt="Traditional Turkish breakfast with tea and menemen" />
-    </div>
+  <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=900&q=80" alt="Zengin Türk kahvaltısı, menemen, Türk çayı ve kahvesi" />
+</div>
     <p>We look forward to welcoming food enthusiasts to savor traditional recipes made with the finest ingredients and passionate craftsmanship.</p>
   </section>
 
@@ -165,15 +185,21 @@
     <h2>Contact</h2>
     <p>For inquiries and further information, please reach out to us at: <a href="mailto:info@egedo.net">info@egedo.net</a></p>
     <p>We are eager to connect and collaborate with partners and clients across the globe.</p>
+    <div class="image-container" style="max-width: 100px; margin: 0 auto;">
+      <!-- Mektup ikonu SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#004d99" viewBox="0 0 24 24" width="100%" height="100%">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </div>
   </section>
 </main>
 
-  <footer>
+<footer>
   &copy; 2025 Egedo Holding. All rights reserved.
 </footer>
 
 <script>
-  // Menü linklerine tıklanınca ilgili bölümü gösterme
+  // Menü linklerine tıklandığında sekme değişimi
   const links = document.querySelectorAll('nav a');
   const sections = document.querySelectorAll('main section');
 
@@ -182,7 +208,7 @@
       e.preventDefault();
       const target = link.getAttribute('href').substring(1);
 
-      // Aktif link ve sekme değişimi
+      // Aktif linki ve sekmeyi değiştir
       links.forEach(l => l.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
 
@@ -191,3 +217,6 @@
     });
   });
 </script>
+
+</body>
+</html>
