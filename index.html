@@ -171,6 +171,24 @@ header svg {
   <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Ocean beach with airplane flying overhead" />
 </div>
     <p>Our commitment is to deliver hassle-free travel experiences with personalized assistance, ensuring our clients enjoy every journey with confidence and comfort.</p>
+  <form id="hotelSearchForm" style="margin-top: 2rem;">
+  <h3>Search Hotels</h3>
+  <label>
+    Destination:
+    <input type="text" id="destination" placeholder="e.g. Lisbon" required />
+  </label><br><br>
+  <label>
+    Check-in Date:
+    <input type="date" id="checkin" required />
+  </label><br><br>
+  <label>
+    Check-out Date:
+    <input type="date" id="checkout" required />
+  </label><br><br>
+  <button type="submit">Search</button>
+</form>
+
+<div id="hotelResults" style="margin-top: 2rem;"></div>
   </section>
 
   <section id="gastronomy">
